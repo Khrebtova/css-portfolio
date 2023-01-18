@@ -10,8 +10,8 @@ function App() {
     <div className="App" >
       <Day1 />
       <Day2 />
-      {/* <Day3 /> */}
       <Day4 />
+      <Day3 />
     </div>
   );
 }
