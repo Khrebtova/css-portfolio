@@ -1,4 +1,5 @@
 import React from "react";
+import Details from "../details/details";
 import "./day-4.css";
 
 const Day4 = () => {
@@ -11,6 +12,7 @@ const Day4 = () => {
           <div className="circle small"></div>
         </div>
       </div>
+      <Details title="Day 4" linkURL="https://codepen.io/Khrebtova/pen/ZEjXEbG" />
     </div>
   );
 };

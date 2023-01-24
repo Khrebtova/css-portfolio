@@ -1,0 +1,29 @@
+.details {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 400px;
+    padding: 10px 0 10px 0;
+    
+    p{
+        font-size: 14px;
+        margin-left: 10px;
+    }
+
+    .action {
+        font-weight: 600;
+        color: #083e73;
+    }
+
+    .CodePenIcon {
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;        
+        color: black;
+
+        &:hover {
+            color: #083e73;
+            transform: scale(1.1);
+        }
+    }
+}
