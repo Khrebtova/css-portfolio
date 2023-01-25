@@ -1,3 +1,6 @@
+$red:  #FA7373;
+$blue: #1976D2;
+
 .day-5-frame {
   width: 400px;
   height: 400px;
@@ -77,10 +80,10 @@
         content: "";
       }
       .red:before {
-        background: #fa7373;
+        background: $red;
       }
       .blue:before {
-        background: #1976d2;
+        background: $blue;
       }
     }
     .report-graph {
@@ -123,11 +126,115 @@
         stroke-linecap: round;
       }
       .graph.blue svg polyline {
-        stroke: #1976d2;
+        stroke: $blue;
       }
       .graph.red svg polyline {
-        stroke: #fa7373;
+        stroke: $red;
       }
+
+      .point {
+        position: absolute;
+        z-index: 10;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        cursor: pointer;	
+        
+        &:hover .tooltip{
+            visibility: visible;
+            transform: translate3d(-50%, 0, 0);
+        }
+        &.mon{
+            left: 15px;				
+        }			
+        &.tue{
+            left: 57px;				
+        }			
+        &.wed{				
+            left: 98px;				
+        }
+        &.thur{				
+            left: 138px;						
+        }
+        &.fri{				
+            left: 177px;				
+        }
+        &.sat{				
+            left: 218px;				
+        }
+        &.sun{
+            left: 257px;				
+        }
+    }
+    .red .point {
+        background: #FA7373;			
+        &.mon{				
+            bottom: 32px;
+        }			
+        &.tue{				
+            bottom: 66px;
+        }			
+        &.wed{				
+            bottom: 56px;			
+        }
+        &.thur{
+            bottom: 68px;			
+        }
+        &.fri{				
+            bottom: 42px;			
+        }
+        &.sat{				
+            bottom: 32px;			
+        }
+        &.sun{				
+            bottom: 59px;
+        }			
+    }		
+    .blue .point {			
+        background: #1976D2;				
+        &.mon{
+            bottom: 18px;
+        }
+        &.tue{
+            bottom: 28px;
+        }
+        &.wed{				
+            bottom: 14px;			
+        }
+        &.thur{
+            bottom: 24px;			
+        }
+        &.fri{				
+            bottom: 18px;			
+        }
+        &.sat{				
+            bottom: 5px;			
+        }
+        &.sun{				
+            bottom: 15px;
+        }	
+    }		
+    
+    .tooltip{
+        position: absolute;
+        visibility: hidden;
+        color: #fff;
+        bottom: 15px;
+        left: 50%;
+        font-weight: 600;
+        font-size: 11px;			
+        padding: 6px;
+        transform: translate3d(-50%, 10px, 0);
+        transition: transform 0.4s ease-out;
+        height: 18px;
+        clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 70% 76%, 50% 100%, 30% 76%, 0% 75%);			
+    }		
+    .red .tooltip{
+        background: $red;	
+    }		
+    .blue .tooltip{
+        background: $blue;	
+    }
     }
     .report-days {
       //position: relative;
