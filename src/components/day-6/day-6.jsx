@@ -1,7 +1,7 @@
 import React from "react";
 import Details from "../details/details";
 import "./day-6.scss";
-
+import IMG from '../../assets/me_1.jpg'
 const Day6 = () => {
   return (
     <div>
@@ -12,13 +12,13 @@ const Day6 = () => {
               <div className="frame-circle-1"></div>
               <div className="frame-circle-2"></div>
               <img
-                src="https://100dayscss.com/codepen/jessica-potter.jpg"
+                src={IMG}
                 alt="profile-img"
                 className="profile-img"
               />
             </div>
-            <span className="profile-name">Jessica Potter</span>
-            <span className="profile-job">Visual Artist</span>
+            <span className="profile-name">Kseniia McFadden</span>
+            <span className="profile-job">Developer</span>
             <div className="profile-buttons">
               <div className="profile-btn"> Follow </div>
               <div className="profile-btn"> Message </div>
