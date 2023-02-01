@@ -149,68 +149,69 @@ $ease-transition: all 0.4s ease-in-out;
         &.active {
           transform: translate(0%, 0);
           opacity: 1;
-          visibility: visible;          
+          visibility: visible;
         }
         &:focus {
           outline: none;
-          color:#666;
+          color: #666;
         }
       }
     }
 
     .day-7-content {
-        width: 100%;
-        height: 240px;
+      width: 100%;
+      height: 240px;
+      position: relative;
+      overflow: hidden;
+      transition: 0.5s ease-in;
+      animation: content-animation 0.5s ease-in;
+
+      .line {
+        position: absolute;
+        background: #ebebeb;
+        width: 3px;
+        height: 100%;
+        left: 27px;
+      }
+
+      .notification {
         position: relative;
-        overflow: hidden;        
-        
-        .line{
-            position: absolute;
-            background: #EBEBEB;
-            width: 3px;
-            height: 100%;
-            left: 27px;
+        z-index: 2;
+        margin: 25px 20px 25px 43px;
+
+        &:hover {
+          color: #5f98cd;
         }
 
-        .notification{
-            position: relative;
-            z-index: 2;
-            margin: 25px 20px 25px 43px;
-            
-            &:hover{
-                color: #5F98CD;
-            }
-
-            .circle {
-                position: absolute;
-                height: 10px;
-                width: 10px;
-                border-radius: 50%;
-                border: 2px solid #5F98CD;
-                background: #fff;
-                box-shadow: 0 0 0 3px #fff;
-                left: -21px;
-            }
-
-            .time{
-                font-size: 11px;
-                position: relative;
-                display: block;
-                text-align: left;
-                //left: 20px;               
-            }
-
-            p {
-                position: relative;
-                display: block;
-                font-size: 15px;
-                margin: 0;
-                line-height: 20px;
-                text-align: left;
-            }
+        .circle {
+          position: absolute;
+          height: 10px;
+          width: 10px;
+          border-radius: 50%;
+          border: 2px solid #5f98cd;
+          background: #fff;
+          box-shadow: 0 0 0 3px #fff;
+          left: -21px;
         }
+
+        .time {
+          font-size: 11px;
+          position: relative;
+          display: block;
+          text-align: left;
+          //left: 20px;
+        }
+
+        p {
+          position: relative;
+          display: block;
+          font-size: 15px;
+          margin: 0;
+          line-height: 20px;
+          text-align: left;
+        }
+      }
     }
-
   }
 
   .day-7-popup {
@@ -228,27 +229,38 @@ $ease-transition: all 0.4s ease-in-out;
       transform: translate(0%, 0);
     }
 
-    .menu-item{
-        color: #93B2CD;
-        padding: 15px 17px;
-        font-size: 14px;
-        display: flex;
-        flex-direction: row;
-        cursor: pointer;
-        transition: 0.4s ease-in-out; 
-        &:hover{
-            background: #264057;
-            color: #fff;
-        }			
-        
-        span {
-            display: block;				
-            margin-left: 5px;
-            
-            &.menu-item-title{
-                margin-top: 5px;
-            }
+    .menu-item {
+      color: #93b2cd;
+      padding: 15px 17px;
+      font-size: 14px;
+      display: flex;
+      flex-direction: row;
+      cursor: pointer;
+      transition: 0.4s ease-in-out;
+      &:hover {
+        background: #264057;
+        color: #fff;
+      }
+
+      span {
+        display: block;
+        margin-left: 5px;
+
+        &.menu-item-title {
+          margin-top: 5px;
         }
+      }
     }
+  }
+}
+
+@keyframes content-animation {
+  from {
+    transform: translate3d(0, 50px, 0);
+    opacity: 0;
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
   }
 }

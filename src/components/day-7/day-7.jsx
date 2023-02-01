@@ -69,14 +69,14 @@ const Day7 = () => {
 
   const renderMenu = menuItems.map((item) => (
     <div className="menu-item" key={item.title}>
-        <span className="material-symbols-outlined icon">{item.icon}</span>
-        <span className="menu-item-title">{item.title}</span>
+      <span className="material-symbols-outlined icon">{item.icon}</span>
+      <span className="menu-item-title">{item.title}</span>
     </div>
-  ))
+  ));
 
   return (
     <div>
-      <div className="day-7-frame">        
+      <div className="day-7-frame">
         <div className={showPopup ? "day-7-center active" : "day-7-center"}>
           <div className="day-7-header">
             <div className="day-7-menu-icon" onClick={handleMenuClick}>
@@ -102,7 +102,7 @@ const Day7 = () => {
           </div>
         </div>
         <div className={showPopup ? "day-7-popup active" : "day-7-popup"}>
-            {renderMenu}          
+          {renderMenu}
         </div>
       </div>
       <Details
