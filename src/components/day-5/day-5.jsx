@@ -1,11 +1,12 @@
 import React from "react";
 import Details from "../details/details";
+import '../frame/Frame.scss';
 import "./day-5.scss";
 
 const Day5 = () => {
   return (
     <div>
-      <div className="day-5-frame">
+      <div className="day-5-frame frame">
         <div className="day-5-report-card">
           <div className="report-header">
             <span className="title">WEEKLY REPORT</span>

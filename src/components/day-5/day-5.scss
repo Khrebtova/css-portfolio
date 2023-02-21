@@ -2,16 +2,8 @@ $red:  #FA7373;
 $blue: #1976D2;
 
 .day-5-frame {
-  width: 400px;
-  height: 400px;
-  border-radius: 10px;  
-  box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
-  overflow: hidden;
   background: #4db6ac;
   color: #333;
-  font-family: "Open Sans", Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 
   .day-5-report-card {
     position: relative;

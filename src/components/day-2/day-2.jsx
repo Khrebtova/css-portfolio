@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Details from "../details/details";
+import '../frame/Frame.scss';
 import "./day-2.css";
 
 const Day2 = () => {
@@ -13,7 +14,7 @@ const Day2 = () => {
 
   return (
     <div>
-      <div className="day-2-frame">
+      <div className="day-2-frame frame">
         <div className="day-2-center">
           <div
             id="menu"

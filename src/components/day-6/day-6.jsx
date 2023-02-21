@@ -1,21 +1,19 @@
 import React from "react";
 import Details from "../details/details";
+import "../frame/Frame.scss";
 import "./day-6.scss";
-import IMG from '../../assets/me_1.jpg'
+import IMG from "../../assets/me_1.jpg";
+
 const Day6 = () => {
   return (
     <div>
-      <div className="frame-day-6">
+      <div className="frame-day-6 frame">
         <div className="center-day-6">
           <div className="profile">
             <div className="profile-picture">
               <div className="frame-circle-1"></div>
               <div className="frame-circle-2"></div>
-              <img
-                src={IMG}
-                alt="profile-img"
-                className="profile-img"
-              />
+              <img src={IMG} alt="profile-img" className="profile-img" />
             </div>
             <span className="profile-name">Kseniia McFadden</span>
             <span className="profile-job">Developer</span>
@@ -40,7 +38,11 @@ const Day6 = () => {
           </div>
         </div>
       </div>
-      <Details title="Day-6" action="Hover over profile" linkURL="https://codepen.io/Khrebtova/pen/XWBqLbV?editors=1000"/>
+      <Details
+        title="Day-6"
+        action="Hover over profile"
+        linkURL="https://codepen.io/Khrebtova/pen/XWBqLbV?editors=1000"
+      />
     </div>
   );
 };

@@ -1,16 +1,9 @@
 $light-blue: rgb(171, 203, 243);
 $ease-transition: all 0.4s ease-in-out;
+
 .day-7-frame {
-  width: 400px;
-  height: 400px;
-  border-radius: 10px;
-  box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
-  overflow: hidden;
   background: #264057;
   color: #666;
-  font-family: "Open Sans", Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 
   .day-7-center {
     position: relative;

@@ -1,14 +1,4 @@
 .day-1-frame {
-  width: 400px;
-  height: 400px;
-  border-radius: 10px;
-  box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  font-family: "Open Sans", Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  justify-content: center;
-  align-items: center;
   background: linear-gradient(
     45deg,
     rgba(67, 58, 160) 35%,

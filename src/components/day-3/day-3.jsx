@@ -1,11 +1,12 @@
 import React from "react";
 import Details from "../details/details";
+import '../frame/Frame.scss';
 import "./day-3.scss";
 
 const Day3 = () => {
   return (
     <div>
-      <div className="day-3-frame">
+      <div className="day-3-frame frame">
         <div className="day-3-center">
           <div className="window">
             <div className="sky"></div>

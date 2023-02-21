@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Details from "../details/details";
+import "../frame/Frame.scss";
 import "./day-7.scss";
 
 const Day7 = () => {
@@ -76,7 +77,7 @@ const Day7 = () => {
 
   return (
     <div>
-      <div className="day-7-frame">
+      <div className="day-7-frame frame">
         <div className={showPopup ? "day-7-center active" : "day-7-center"}>
           <div className="day-7-header">
             <div className="day-7-menu-icon" onClick={handleMenuClick}>
