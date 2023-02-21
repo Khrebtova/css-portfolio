@@ -4,12 +4,11 @@ import "./day-8.scss";
 import Details from "../details/details";
 
 const Day8 = () => {
-    
   const renderblubbs = () => {
     const blubbs = [];
-        for (let i = 1; i <= 10; i++) {
-        blubbs.push( <div className={`blubb-${i}`}></div>);
-        }
+    for (let i = 1; i <= 10; i++) {
+      blubbs.push(<div className={`blubb-${i}`}></div>);
+    }
     return blubbs;
   };
 
@@ -23,7 +22,7 @@ const Day8 = () => {
 
   return (
     <div>
-      <div className="frame day-8-frame">        
+      <div className="frame day-8-frame">
         <div className="day-8-center">
           <div className="ball"></div>
           {renderblubbs()}

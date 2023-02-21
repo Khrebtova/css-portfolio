@@ -8,64 +8,83 @@
     left: 50%;
     transform: translate(-12%, -50%);
 
-    .ball{
-        position: relative;
-        width: 90px;
-        height: 90px;
-        border-radius: 50%;
-        background: #fff;        
-        filter: blur(1px) brightness(1.5);
+    &:hover{
+      .ball {
+        background: rgba(222, 235, 97, 0.992);
+      }
+      @for $i from 1 through 10 {
+        .blubb-#{$i}{
+          background: rgb(random(255), random(255), random(255));
+        }
+        .sparkle-#{$i}:after{
+          background: rgb(random(255), random(255), random(255));
+        }
+      }
+    }
+
+    .ball {
+      position: relative;
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      background: #fff;
+      filter: blur(1px) brightness(1.5);
     }
 
     @for $i from 1 through 9 {
-        .blubb-#{$i} {
-            position: absolute;
-            display: block;
-            top: 20px;
-            left: 20px;
-            width: 50px;
-            height: 50px;
-            background: #fff;
-            border-radius: 50%;
-            transform: rotate( (random(300)) + deg);
-            transform-origin: (40 - $i * 3) + px (40 - $i * 3) + px;
-            animation: rotate (2.5 + $i / 5) + s ease-in-out ($i / 5) + s infinite;
-            filter: blur(1px);
-        }
+      .blubb-#{$i} {
+        position: absolute;
+        display: block;
+        top: 20px;
+        left: 20px;
+        width: 50px;
+        height: 50px;
+        background: #fff;
+        border-radius: 50%;
+        transform: rotate((random(300)) + deg);
+        transform-origin: (40 - $i * 3) + px (40 - $i * 3) + px;
+        animation: rotate (2.5 + $i / 5) + s ease-in-out ($i / 5) + s infinite;
+        filter: blur(1px);
+      }
     }
 
     @for $i from 1 through 10 {
-        .sparkle-#{$i} {
-            position: absolute;
-            top: 38px;
-            left: 38px;
-            width: (7 + $i) + px;
-            height: (7 + $i) + px;
-            transform: rotate( (random(300)) + deg);
-            
-            &:after {
-                position: absolute;
-                display: block;
-                content: '';
-                width: (7 + $i) + px;
-                height: (7 + $i) + px;
-                background: #fff;
-                border-radius: 50%;
-                transform-origin: (60 - $i * 2) + px (60 - $i * 2) + px;
-                animation: rotate (3.5 + $i / 5) + s ease-in-out ($i / 5) + s infinite;
-                filter: blur(1px) opacity($i / 10);
-            }
+      .sparkle-#{$i} {
+        position: absolute;
+        top: 38px;
+        left: 38px;
+        width: (7 + $i) + px;
+        height: (7 + $i) + px;
+        transform: rotate((random(300)) + deg);
+
+        &:after {
+          position: absolute;
+          display: block;
+          content: "";
+          width: (7 + $i) + px;
+          height: (7 + $i) + px;
+          background: #fff;
+          border-radius: 50%;
+          transform-origin: (60 - $i * 2) + px (60 - $i * 2) + px;
+          animation: rotate
+            (3.5 + $i / 5) +
+            s
+            ease-in-out
+            ($i / 5) +
+            s
+            infinite;
+          filter: blur(1px) opacity($i / 10);
         }
+      }
     }
   }
 }
 
-
 @keyframes rotate {
-	from {
-		transform: rotate(0deg) translate3d(0, 0, 0);
-	}
-	to {
-		transform: rotate(360deg) translate3d(0, 0, 0);
-	}
+  from {
+    transform: rotate(0deg) translate3d(0, 0, 0);
+  }
+  to {
+    transform: rotate(360deg) translate3d(0, 0, 0);
+  }
 }
