@@ -1,0 +1,128 @@
+.day-9-frame {
+  background: #1a2238;
+  color: #394568;
+
+  .moon {
+    position: relative;
+    width: 67px;
+    height: 67px;
+    top: 45px;
+    left: 55px;
+    border-radius: 50px;
+    background: #f6edbd;
+    overflow: hidden;
+    box-shadow: 0 0 10px 0 #f6edbd;
+    animation: moon-up 1s ease-in-out forwards;
+
+    @for $i from 1 through 8 {
+        .crater-#{$i} {
+            background: #e0bf807d ;
+            position: absolute;
+            border-radius: 50%;
+            width: ($i + 7) + px;
+            height: ($i + 7) + px;
+        }
+    }
+    .crater-1{
+        top: 50px;
+        left: 40px;
+    }
+    .crater-2{
+        top: 10px;
+        left: 20px;
+    }
+    .crater-3{
+        top: 30px;
+        left: 35px;
+    }
+    .crater-4{
+        top: 45px;
+        left: 15px;
+    }
+    .crater-5{
+        top: 60px;
+        left: 20px;
+    }
+    .crater-6{
+        top: 40px;
+        left: 50px;
+    }
+    .crater-7{
+        top: 2px;
+        left: 43px;
+    }
+    .crater-8{
+        top: 25px;
+        left: 5px;
+    }
+  }
+
+  .day-9-report-card {
+    position: relative;
+    background: #fff;
+    height: 90px;
+    width: 400px;
+    top: 215px;
+    z-index: 10;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 0 0 0;
+
+    .temperature {
+      font-size: 45px;
+      font-weight: 400;
+      margin-left: 20px;
+      margin-top: 5px;
+    }
+
+    .details {
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      align-items: flex-start;
+      margin-top: 3px;
+      gap: 3px;
+      width: 200px;
+      .p {
+        font-size: 15px;
+        font-weight: 400;
+      }
+    }
+
+    .next-day-forecast {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-right: 20px;
+      margin-top: 10px;
+      width: 130px;
+      .days,
+      .temperatures {
+        font-size: 15px;
+        line-height: 20px;
+        margin-right: 10px;
+      }
+      .days {
+        font-weight: 600;
+        &:hover {
+          cursor: pointer;
+
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+@keyframes moon-up {
+  0% {
+    top: 300px;
+  }
+  50% {
+    top: 0px;
+  }
+  100% {
+    top: 45px;
+  }
+}

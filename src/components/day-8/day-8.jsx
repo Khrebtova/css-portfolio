@@ -32,6 +32,7 @@ const Day8 = () => {
       <Details
         title="Day 8"
         linkURL="https://codepen.io/Khrebtova/pen/WNgwxdp"
+        action="Hover over the ball"
       />
     </div>
   );

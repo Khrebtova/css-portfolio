@@ -29,6 +29,7 @@
       border-radius: 50%;
       background: #fff;
       filter: blur(1px) brightness(1.5);
+      z-index: 1;
     }
 
     @for $i from 1 through 9 {
@@ -73,7 +74,7 @@
             ($i / 5) +
             s
             infinite;
-          filter: blur(1px) opacity($i / 10);
+          filter: blur(1px) ;
         }
       }
     }
