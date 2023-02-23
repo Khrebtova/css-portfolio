@@ -1,68 +1,216 @@
 .day-9-frame {
   background: #1a2238;
   color: #394568;
+  overflow: hidden;
 
-  .moon {
+  .day-9-window {
     position: relative;
-    width: 67px;
-    height: 67px;
-    top: 45px;
-    left: 55px;
-    border-radius: 50px;
-    background: #f6edbd;
-    overflow: hidden;
-    box-shadow: 0 0 10px 0 #f6edbd;
-    animation: moon-up 1s ease-in-out forwards;
+    height: 310px;
+    width: 400px;
+    //------------------MOON------------------
+    .moon {
+      position: relative;
+      width: 67px;
+      height: 67px;
+      top: 45px;
+      left: 55px;
+      border-radius: 50px;
+      background: #f6edbd;
+      overflow: hidden;
+      box-shadow: 0 0 10px 0 #f6edbd;
+      animation: moon-up 2s ease-in-out forwards;
 
-    @for $i from 1 through 8 {
+      @for $i from 1 through 8 {
         .crater-#{$i} {
-            background: #e0bf807d ;
-            position: absolute;
-            border-radius: 50%;
-            width: ($i + 7) + px;
-            height: ($i + 7) + px;
+          background: #e0bf807d;
+          position: absolute;
+          border-radius: 50%;
+          width: ($i + 7) + px;
+          height: ($i + 7) + px;
         }
-    }
-    .crater-1{
+      }
+      .crater-1 {
         top: 50px;
         left: 40px;
-    }
-    .crater-2{
+      }
+      .crater-2 {
         top: 10px;
         left: 20px;
-    }
-    .crater-3{
+      }
+      .crater-3 {
         top: 30px;
         left: 35px;
-    }
-    .crater-4{
+      }
+      .crater-4 {
         top: 45px;
         left: 15px;
-    }
-    .crater-5{
+      }
+      .crater-5 {
         top: 60px;
         left: 20px;
-    }
-    .crater-6{
+      }
+      .crater-6 {
         top: 40px;
         left: 50px;
-    }
-    .crater-7{
+      }
+      .crater-7 {
         top: 2px;
         left: 43px;
-    }
-    .crater-8{
+      }
+      .crater-8 {
         top: 25px;
         left: 5px;
+      }
+    }
+    //------------------HILLS------------------
+    @for $i from 1 through 5 {
+      .hill-#{$i} {
+        position: absolute;
+        z-index: 5;
+        width: 337px;
+        height: 281px;
+        border-radius: 50%;
+        background: #26314f;
+      }
+    }
+    .hill-1 {
+      top: 195px;
+      left: -50px;
+    }
+    .hill-2 {
+      top: 183px;
+      left: 170px;
+    }
+    .hill-3,
+    .hill-4,
+    .hill-5 {
+      background: #303c5d;
+      width: 300px;
+    }
+    .hill-3 {
+      left: -100px;
+      top: 250px;
+    }
+    .hill-4 {
+      left: 50px;
+      top: 226px;
+    }
+    .hill-5 {
+      left: 200px;
+      top: 260px;
+    }
+    //------------------RAIN------------------
+    .drop {
+      position: absolute;
+      border-radius: 50%;
+      background: #7fc1f9;
+      transform-origin: 50% 100%;
+      z-index: 20;
+      top: 5px;
+      animation: rain 1s linear infinite;
+    }
+
+    @for $i from 1 through 10 {
+      .drop-big-#{$i} {
+        width: 6px;
+        height: 6px;
+        left: 18 + (($i - 1) * 38) + px;        
+        animation-delay: random(10) / 10  + s;
+      }
+      .drop-big-#{$i}:before {
+        content: "";
+        position: absolute;
+        display: block;
+        border-radius: 3px;
+        background: #7fc1f9;
+        top: -2px;
+        left: 1px;
+        width: 6px;
+        height: 6px;
+      }
+      .drop-big-#{$i}:after {
+        position: absolute;
+        content: "";
+        display: block;
+        top: -5px;
+        left: 2px;
+        width: 4px;
+        height: 10px;
+        background: #7fc1f9;
+        border-radius: 50%;
+      }
+
+      .drop-medium-#{$i} {
+        width: 6px;
+        height: 6px;
+        opacity: 0.6;        
+        left: 20 + (($i - 1) * 38) + px;
+        animation-delay: random(10) / 10  + s;
+      }
+      .drop-medium-#{$i}:before {
+        content: "";
+        position: absolute;
+        display: block;
+        border-radius: 3px;
+        background: #7fc1f9;
+        opacity: 0.6;
+        top: -2px;
+        left: 1px;
+        width: 4px;
+        height: 4px;
+      }
+      .drop-medium-#{$i}:after {
+        position: absolute;
+        content: "";
+        display: block;
+        top: -5px;
+        left: 2px;
+        width: 2px;
+        height: 8px;
+        background: #7fc1f9;
+        border-radius: 50%;
+      }
+
+      .drop-small-#{$i} {
+        width: 4px;
+        height: 4px;
+        opacity: 0.3;        
+        left: 15 + (($i - 1) * 35) + px;        
+        animation-delay: random(10) / 10  + s;
+      }
+      .drop-small-#{$i}:before {
+        content: "";
+        position: absolute;
+        display: block;
+        border-radius: 3px;
+        background: #7fc1f9;
+        opacity: 0.6;
+        top: -2px;
+        left: 1px;
+        width: 4px;
+        height: 4px;
+      }
+      .drop-small-#{$i}:after {
+        position: absolute;
+        content: "";
+        display: block;
+        top: -5px;
+        left: 2px;
+        width: 2px;
+        height: 8px;
+        background: #7fc1f9;
+        border-radius: 50%;
+      }
     }
   }
 
+  //------------------REPORT CARD------------------
   .day-9-report-card {
     position: relative;
     background: #fff;
     height: 90px;
     width: 400px;
-    top: 215px;
+    //top: 215px;
     z-index: 10;
     display: flex;
     flex-direction: row;
@@ -115,6 +263,8 @@
   }
 }
 
+//------------------ANIMATIONS------------------
+
 @keyframes moon-up {
   0% {
     top: 300px;
@@ -124,5 +274,17 @@
   }
   100% {
     top: 45px;
+  }
+}
+
+@keyframes rain {
+  0% {
+    transform: translate3d(0, 0, 0) scaleX(1) scaleY(1) rotate(17deg);
+  }
+  85% {
+    transform: translate3d(-40px, 295px, 0) scaleX(1) scaleY(1) rotate(17deg);
+  }
+  100% {
+    transform: translate3d(-40px, 295px, 0) scaleX(3) scaleY(0) rotate(0deg);
   }
 }

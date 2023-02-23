@@ -7,7 +7,7 @@ const Day8 = () => {
   const renderblubbs = () => {
     const blubbs = [];
     for (let i = 1; i <= 10; i++) {
-      blubbs.push(<div className={`blubb-${i}`}></div>);
+      blubbs.push(<div className={`blubb-${i}`} key={`blubb-${i}`}></div>);
     }
     return blubbs;
   };
@@ -15,7 +15,7 @@ const Day8 = () => {
   const rendersparkles = () => {
     const sparkles = [];
     for (let i = 1; i <= 10; i++) {
-      sparkles.push(<div className={`sparkle-${i}`}></div>);
+      sparkles.push(<div className={`sparkle-${i}`} key={`sparkle-${i}`}></div>);
     }
     return sparkles;
   };

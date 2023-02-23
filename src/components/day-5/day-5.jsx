@@ -67,8 +67,8 @@ const Day5 = () => {
               <div className="point fri">
                 <div className="tooltip">25</div>
               </div>
-              <div class="point sat">
-                <div class="tooltip">13</div>
+              <div className="point sat">
+                <div className="tooltip">13</div>
               </div>
               <div className="point sun">
                 <div className="tooltip">20</div>
