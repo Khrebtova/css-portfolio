@@ -1,0 +1,124 @@
+$red: #e53935;
+$black: #212121;
+
+.day-10-frame {
+  background: #424242;
+  color: #fff;
+
+  .day-10-watch {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: $black;
+    border: 10px solid #3a3a3a;
+    transform: translate(-50%, -50%);
+
+    .spinner {
+      position: absolute;
+      left: 6px;
+      top: 6px;
+      width: 190px;
+      height: 190px;
+      border-radius: 50%;
+      background: radial-gradient($black 68%, transparent 68%),
+        conic-gradient($red 30%, $black 70%);
+      animation: spinner-animation 5s infinite;
+    }
+
+    .dots {
+      position: absolute;
+      left: 13px;
+      top: 13px;
+      width: 170px;
+      height: 170px;
+      border-radius: 50%;
+      border: 3px dotted;
+    }
+
+    .watch-display {
+      position: absolute;
+      left: 50px;
+      top: 60px;
+
+      .calendar {
+        font-size: 12px;
+        width: 100%;
+      }
+      .time {
+        font-size: 40px;
+        font-weight: bolder;
+      }
+      .biometrics {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+
+        .pulse {
+          font-size: 12px;
+          margin-left: -5px;
+        }
+        .heart {
+          color: $red;
+          font-size: 14px;
+          font-weight: 800;
+          animation: pulse 1s ease-in-out infinite;
+        }
+        .calories {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@property --stroke {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 0%;
+}
+
+@keyframes spinner-animation {
+  from {
+    animation-timing-function: linear;
+    --stroke: 0%;
+    background: radial-gradient($black 68%, transparent 68%),
+      conic-gradient($red var(--stroke), $black var(--stroke));
+  }
+
+  50% {
+    animation-timing-function: linear;
+    --stroke: 100%;
+    background: radial-gradient($black 68%, transparent 68%),
+      conic-gradient($red var(--stroke), $black var(--stroke));
+  }
+
+  51% {
+    animation-timing-function: linear;
+    --stroke: 0%;
+    background: radial-gradient($black 68%, transparent 68%),
+      conic-gradient($black var(--stroke), $red var(--stroke));
+  }
+
+  to {
+    animation-timing-function: linear;
+    --stroke: 100%;
+    background: radial-gradient($black 68%, transparent 68%),
+      conic-gradient($black var(--stroke), $red var(--stroke));
+  }
+}
