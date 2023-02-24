@@ -1,0 +1,122 @@
+.day-11-frame {
+  background: #fff3e0;
+
+  .floor {
+    position: relative;
+    z-index: 1;
+    top: 250px;
+    background: #212121;
+    height: 150px;
+    .stripe-1,
+    .stripe-2,
+    .stripe-3,
+    .stripe-4 {
+      position: absolute;
+      background: #443d3d;
+      height: 5px;
+      left: 400px;
+      width: 200px;
+      animation: floor-move 4s linear infinite;
+    }
+    .stripe-1 {
+      top: 10px;
+    }
+    .stripe-2 {
+      top: 37px;
+      animation-delay: 2s;
+    }
+    .stripe-3 {
+      top: 67px;
+      animation-delay: 3s;
+    }
+    .stripe-4 {
+      top: 110px;
+      animation-delay: 4s;
+    }
+  }
+
+  .person {
+    position: relative;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: shoes-appear 2s ease-in;
+    z-index: 5;
+
+    .leg {
+      position: absolute;
+      left: 120px;
+      transform-origin: 50% 0;
+    }
+
+    .left {
+      animation: leg-swing 2s ease-in-out 1s infinite;
+      .shoe {
+        animation: shoe-swing 2s ease-in-out 1s infinite;
+      }
+    }
+
+    .right {
+      animation: leg-swing 2s ease-in-out infinite;
+      .shoe {
+        animation: shoe-swing 2s ease-in-out infinite;
+      }
+    }
+
+    .shoe {
+      position: absolute;
+      z-index: 10;
+      width: 151px;
+      height: 128px;
+      left: 0;
+      bottom: 0;
+      background: url(https://100dayscss.com/codepen/doc-martens.svg) center
+        center no-repeat;
+      transform-origin: 0 95%;
+    }
+  }
+}
+
+@keyframes leg-swing {
+  0%,
+  100% {
+    transform: translate(120px, 10px) rotate(-10deg);
+  }
+  50% {
+    transform: translate(-100px, -10px) rotate(10deg);
+  }
+}
+
+@keyframes shoe-swing {
+  0%,
+  100% {
+    transform: translate(10px, -5px) rotate(-10deg);
+  }
+  25% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(10px, -10px) rotate(10deg);
+  }
+  75% {
+    transform: translate(0, -40px) rotate(0deg);
+  }
+}
+
+@keyframes shoes-appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes floor-move {
+  0% {
+    transform: translate(-100, 0);
+  }
+  100% {
+    transform: translate(-600px, 0);
+  }
+}

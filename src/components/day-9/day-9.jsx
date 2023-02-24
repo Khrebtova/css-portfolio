@@ -45,14 +45,12 @@ const Day9 = () => {
 
   return (
     <div>
-      <div className="frame day-9-frame">
-        {/* <p>Work in progress</p> */}
+      <div className="frame day-9-frame">       
         <div className="day-9-window">
           <div className="moon">{renderCraters()}</div>
           {renderDropsBig()}
           {renderDropsMedium()}
           {renderDropsSmall()}
-          
           {renderHills()}
         </div>
         <div className="day-9-report-card">
