@@ -1,49 +1,203 @@
+$orange: #ff5222;
+
 .day-13-frame {
   background: #fff;
-  color: #333;
+  color: #fff;
   display: grid;
-  grid-template-columns: 1fr 1fr;
 
-  .profile {
-    overflow: hidden;
+  .profiles-container {
     position: relative;
-    cursor: pointer;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 5px;
+    padding: 5px;
 
-    img {
-      object-fit: cover;
-      z-index: 2;
-    }
-    &:hover {
+    .profile {
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+
+      img {
+        object-fit: cover;
+        z-index: 2;
+      }
+      &:hover {
+        .overlay {
+          opacity: 0.5;
+        }
+        .plus {
+          opacity: 1;
+          transform: scale(1);
+          transition: 0.5s ease-in-out;
+        }
+      }
+
       .overlay {
-        opacity: 0.5;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #000000;
+        opacity: 0;
+        z-index: 2;
       }
+
       .plus {
-        opacity: 1;
-        transform: scale(1);
-        transition: 0.8s ease-in-out;
+        position: absolute;
+        top: 40%;
+        left: 35%;
+        z-index: 3;
+        color: $orange;
+        font-size: 50px;
+        transform: scale(2);
+        opacity: 0;
+        transition: 0.5s ease-in-out;
+      }
+    }
+  }
+
+  .profile-details {
+    position: relative;
+
+    // &.closing{
+    //     .header {
+    //         animation: profile-header-animation 0.5s ease-in-out reverse;
+    //     }
+    //     .details {
+    //         animation: profile-details-animation 0.5s ease-in-out reverse;
+    //     }
+    //     .close-button {
+    //         animation: profile-header-animation 1.2s ease-in-out reverse;
+    //     }
+    //     .profile-picture {
+    //         animation: profile-picture-animation 1s ease-in-out reverse;
+    //     }
+    // }
+
+    .close-button {
+      position: absolute;
+      z-index: 7;
+      top: 20px;
+      right: 30px;
+      font-size: 50px;
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      border: solid $orange 1px;
+      color: $orange;
+      cursor: pointer;
+      transition: all ease-in-out 0.5s;
+      animation: profile-header-animation 1.2s ease-in-out;
+
+      &:hover {
+        color: #fff;
+        background-color: $orange;
       }
     }
 
-    .overlay {
+    .header {
       position: absolute;
+      z-index: 5;
       top: 0;
       left: 0;
-      width: 100%;
-      height: 100%;
-      background: #000000;
-      opacity: 0;
-      z-index: 2;
+      animation: profile-header-animation 0.5s ease-in-out;
+      transition: all ease-in-out 0.5s;
+    }
+    .details {
+      position: absolute;
+      z-index: 5;
+      height: 220px;
+      top: 180px;
+      left: 0;
+      background: $orange;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: all ease-in-out 0.5s;
+      animation: profile-details-animation 0.5s ease-in-out;
+      .name {
+        margin-top: 40px;
+        font-size: 20px;
+        font-weight: 600;
+      }
+
+      .buttons {
+        display: flex;
+        flex-direction: row;
+        z-index: 10;
+
+        .button {
+          display: block;
+          margin: 30px;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          border: solid white 1px;
+          text-align: center;
+          line-height: 45px;
+          font-size: 20px;
+          transition: all ease-in-out 0.5s;
+          cursor: pointer;
+
+          &:hover {
+            background: #fff;
+            color: $orange;
+          }
+        }
+      }
     }
 
-    .plus {
+    .profile-picture {
       position: absolute;
-      top: 40%;
-      left: 35%;
-      z-index: 10;
-      color: #ffb222;
-      font-size: 50px;
-      transform: scale(2);
-      opacity: 0;
+      z-index: 7;
+      top: 130px;
+      left: 150px;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: solid #fff 2px;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      animation: profile-picture-animation 1s ease-in-out;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
     }
+  }
+}
+
+@keyframes profile-header-animation {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes profile-details-animation {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes profile-picture-animation {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
   }
 }
