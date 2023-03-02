@@ -60,20 +60,39 @@ $orange: #ff5222;
   .profile-details {
     position: relative;
 
-    // &.closing{
-    //     .header {
-    //         animation: profile-header-animation 0.5s ease-in-out reverse;
-    //     }
-    //     .details {
-    //         animation: profile-details-animation 0.5s ease-in-out reverse;
-    //     }
-    //     .close-button {
-    //         animation: profile-header-animation 1.2s ease-in-out reverse;
-    //     }
-    //     .profile-picture {
-    //         animation: profile-picture-animation 1s ease-in-out reverse;
-    //     }
-    // }
+    &.open {
+      .header {
+        animation: profile-header-animation 0.5s ease-in-out;
+      }
+      .details {
+        animation: profile-details-animation 0.5s ease-in-out;
+      }
+      .close-button {
+        animation: close-button-animation 1.2s ease-in-out;
+      }
+      .profile-picture {
+        animation: profile-picture-animation 1s ease-in-out;
+      }
+    }
+
+    &.closing {
+      .header {
+        transform: translateY(-100%);
+        animation: profile-header-animation-reverse 1.2s ease-in-out;
+      }
+      .details {
+        transform: translateY(100%);
+        animation: profile-details-animation-reverse 1.2s ease-in-out;
+      }
+      .close-button {
+        transform: translateY(-150%);
+        animation: close-button-animation-reverse 0.5s ease-in-out;
+      }
+      .profile-picture {
+        transform: translateY(-300%);
+        animation: profile-picture-animation-reverse 0.5s ease-in-out;
+      }
+    }
 
     .close-button {
       position: absolute;
@@ -88,8 +107,6 @@ $orange: #ff5222;
       color: $orange;
       cursor: pointer;
       transition: all ease-in-out 0.5s;
-      animation: profile-header-animation 1.2s ease-in-out;
-
       &:hover {
         color: #fff;
         background-color: $orange;
@@ -101,8 +118,6 @@ $orange: #ff5222;
       z-index: 5;
       top: 0;
       left: 0;
-      animation: profile-header-animation 0.5s ease-in-out;
-      transition: all ease-in-out 0.5s;
     }
     .details {
       position: absolute;
@@ -115,8 +130,7 @@ $orange: #ff5222;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      transition: all ease-in-out 0.5s;
-      animation: profile-details-animation 0.5s ease-in-out;
+
       .name {
         margin-top: 40px;
         font-size: 20px;
@@ -163,7 +177,6 @@ $orange: #ff5222;
       justify-content: center;
       align-items: center;
       overflow: hidden;
-      animation: profile-picture-animation 1s ease-in-out;
       img {
         width: 100%;
         height: 100%;
@@ -182,6 +195,15 @@ $orange: #ff5222;
   }
 }
 
+@keyframes profile-header-animation-reverse {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
 @keyframes profile-details-animation {
   0% {
     transform: translateY(100%);
@@ -191,13 +213,51 @@ $orange: #ff5222;
   }
 }
 
+@keyframes profile-details-animation-reverse {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes close-button-animation {
+  0% {
+    transform: translateY(-150%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes close-button-animation-reverse {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-150%);
+  }
+}
+
 @keyframes profile-picture-animation {
   0% {
-    transform: translateY(-100%);
+    transform: translateY(-300%);
     opacity: 0;
   }
   100% {
     transform: translateY(0);
     opacity: 1;
+  }
+}
+
+@keyframes profile-picture-animation-reverse {
+  0% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-300%);
+    opacity: 0;
   }
 }

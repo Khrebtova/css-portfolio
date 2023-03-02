@@ -68,51 +68,54 @@ const Day13 = () => {
   return (
     <div>
       <div className="frame day-13-frame">
-        {profileVisible ? (
-          <div className="profile-details">
-            <div
-              className="close-button"
-              onClick={() => {
-                setProfileVisible(false);
-                console.log({ profileVisible });
-              }}
-            >
-              <AiFillCloseCircle />
-            </div>
-            <div className="header">
-              <img
-                src="https://100dayscss.com/codepen/13-1-header.jpg"
-                alt="header"
-              />
-            </div>
-            <div className="details">
-              <div className="name">{selectedProfile.name}</div>
-              <div className="buttons">
-                <div className="button">
-                  <AiFillMessage />
-                </div>
-                <div className="button">
-                  <AiFillPhone />
-                </div>
-                <div className="button">
-                  <AiFillHeart />
-                </div>
+        <div
+          className={
+            profileVisible ? "profile-details open" : "profile-details closing"
+          }
+        >
+          <div
+            className="close-button"
+            onClick={() => {
+              setProfileVisible(false);
+              console.log({ profileVisible });
+            }}
+          >
+            <AiFillCloseCircle />
+          </div>
+          <div className="header">
+            <img
+              src="https://100dayscss.com/codepen/13-1-header.jpg"
+              alt="header"
+            />
+          </div>
+          <div className="details">
+            <div className="name">{selectedProfile.name}</div>
+            <div className="buttons">
+              <div className="button">
+                <AiFillMessage />
+              </div>
+              <div className="button">
+                <AiFillPhone />
+              </div>
+              <div className="button">
+                <AiFillHeart />
               </div>
             </div>
-            <div className="profile-picture">
-              <img src={selectedProfile.img} alt="profile" />
-            </div>
           </div>
-        ) : null}
+          <div className="profile-picture">
+            <img src={selectedProfile.img} alt="profile" />
+          </div>
+        </div>
         <div className="profiles-container">{renderProfiles()}</div>
       </div>
       <Details
-        title="Day 12"
+        title="Day 13"
         linkURL="https://codepen.io/Khrebtova/pen/MWqjmLY?editors=0100"
-        action="WORK IN PROGRESS"
+        action="Click on profiles"
       />
     </div>
   );
 };
 
 export default Day13;
+
