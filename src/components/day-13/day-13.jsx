@@ -51,8 +51,7 @@ const Day13 = () => {
           id={`profile-${profile.id}`}
           key={profile.id}
           onClick={() => {
-            setProfileVisible(true);
-            console.log({ profileVisible });
+            setProfileVisible(true);            
             setSelectedProfileId(profile.id);
           }}
         >
@@ -76,8 +75,7 @@ const Day13 = () => {
           <div
             className="close-button"
             onClick={() => {
-              setProfileVisible(false);
-              console.log({ profileVisible });
+              setProfileVisible(false);              
             }}
           >
             <AiFillCloseCircle />
