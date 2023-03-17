@@ -1,0 +1,89 @@
+$gray: #B0BEC5;
+
+.day-15-frame {
+    background: linear-gradient(45deg, rgba(0,157,252,1) 0%, rgba(0,255,166,1) 100%);
+
+    .day-15-center {
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #fff;
+        height: 250px;
+        width: 300px;
+        border-radius: 5px;
+        box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.2);
+        overflow: hidden;
+
+        .header {
+            position: absolute;
+            top: 0;
+            height: 50px;
+            width: 300px;
+            border-bottom: solid 1px $gray;		
+            color: #37474F;
+            font-size: 18px;            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .upload-field {
+            position: absolute;
+            top: 80px;
+            left: 100px;
+            border: 1px dashed $gray;
+            height: 80px;
+            width: 100px;		
+            cursor: pointer;
+
+            .input {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                opacity: 0;
+            }
+
+            .cloud {
+                color: $gray;
+                font-size: 60px;
+                margin-top: 10px;
+                
+                &:hover{
+                    color: #64DD17;
+                }
+            }
+
+            .file-name {
+                position: absolute;
+                background: #fff;
+                color: $gray;
+                z-index: 1;
+                font-size: 14px;
+                margin-top: 10px;
+            }
+        }
+
+        .button {
+            position: absolute;
+            top: 190px;
+            left: 80px;
+            background: #64DD17;
+            color: #fff;
+            font-size: 18px;
+            height: 30px;
+            width: 140px;
+            border-bottom: solid 3px #689F38;
+            border-radius: 5px;
+            text-align: center;
+            padding-top: 10px;            
+            cursor: pointer;
+            
+            &:hover{
+                box-shadow: 0px 0px 11px 3px rgba(100, 221, 23, 0.5);
+            }
+        }
+    }
+}

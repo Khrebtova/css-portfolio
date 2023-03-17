@@ -6,7 +6,7 @@ const Day14 = () => {
     const renderRoad = () => {
         const road = [];
         for (let i = 0; i < 8; i++) {
-            road.push(<div className={`stripe-${i + 1}`}></div>);
+            road.push(<div className={`stripe-${i + 1}`} key={i}></div>);
         }
         return road;
     }
@@ -14,7 +14,7 @@ const Day14 = () => {
     const renderClouds = () => {
         const clouds = [];
         for (let i = 0; i < 10; i++) {
-            clouds.push(<div className={`cloud-${i + 1}`}></div>);
+            clouds.push(<div className={`cloud-${i + 1}`} key={i}></div>);
         }
         return clouds;
     }

@@ -14,6 +14,7 @@ import Day11 from './components/day-11/day-11';
 import Day12 from './components/day-12/day-12';
 import Day13 from './components/day-13/day-13';
 import Day14 from './components/day-14/day-14';
+import Day15 from './components/day-15/day-15';
 function App() {
   return (
     <div className="App" >
@@ -30,7 +31,8 @@ function App() {
       <Day11 />
       <Day12 />
       <Day13 />
-      <Day14 />      
+      <Day14 /> 
+      <Day15 />   
     </div>
   );
 }
